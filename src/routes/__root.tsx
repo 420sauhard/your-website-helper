@@ -81,7 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Spine, joint and physiotherapy care by Dr. Mukesh Kumar Sharma in Chander Nagar, Ghaziabad.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
+      { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#0284c7" },
+      { name: "geo.region", content: "IN-UP" },
+      { name: "geo.placename", content: "Ghaziabad" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

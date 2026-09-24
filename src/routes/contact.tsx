@@ -28,7 +28,7 @@ function Contact() {
     name: "",
     phone: "",
     mode: "Clinic visit",
-    concern: treatments[0].title,
+    concern: treatments[0]?.title ?? "Spine & Joint Rehabilitation",
     message: "",
   });
 

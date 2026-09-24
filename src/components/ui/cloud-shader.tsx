@@ -171,10 +171,11 @@ function parseHex(color: string): [number, number, number] {
   if (value.startsWith("#")) {
     const hex = value.slice(1);
     if (hex.length === 3) {
+      const [r = "f", g = "f", b = "f"] = hex.split("");
       return [
-        parseInt(hex[0] + hex[0], 16) / 255,
-        parseInt(hex[1] + hex[1], 16) / 255,
-        parseInt(hex[2] + hex[2], 16) / 255,
+        parseInt(r + r, 16) / 255,
+        parseInt(g + g, 16) / 255,
+        parseInt(b + b, 16) / 255,
       ];
     }
     return [

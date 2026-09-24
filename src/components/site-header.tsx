@@ -17,17 +17,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-lg">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary font-display text-lg font-bold text-primary-foreground">
-            AD
-          </span>
-          <span className="leading-tight">
-            <span className="block font-display text-sm font-bold sm:text-base">
-              Anita Devi Spine &amp; Joints Centre
-            </span>
-            <span className="block text-xs text-muted-foreground">
-              Ghaziabad · {clinic.experience}
-            </span>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <span className="block font-display text-base font-bold sm:text-lg">
+            Anita Devi Spine &amp; Joints Centre
           </span>
         </Link>
 

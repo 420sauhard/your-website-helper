@@ -18,7 +18,13 @@ export const Route = createFileRoute("/contact")({
         content:
           "Click to call, WhatsApp the clinic desk, get directions to B-7 Chander Nagar, or request an online consultation.",
       },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/contact" },
+      { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/contact" }],
   }),
   component: Contact,
 });

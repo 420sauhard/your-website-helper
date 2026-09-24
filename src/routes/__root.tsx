@@ -126,7 +126,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
-        <main className="flex-1 pb-24 sm:pb-0">
+        <main id="main-content" tabIndex={-1} className="flex-1 pb-24 sm:pb-0">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>

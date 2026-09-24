@@ -17,7 +17,13 @@ export const Route = createFileRoute("/treatments")({
         content:
           "Four care tracks: spine & joint rehabilitation, advanced manual therapy, electrotherapy technology and tele-health follow-up.",
       },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/treatments" },
+      { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/treatments" }],
   }),
   component: Treatments,
 });

@@ -17,7 +17,13 @@ export const Route = createFileRoute("/pricing")({
         content:
           "₹600 consultation, ₹600 per session and a ₹5,000 ten-day rehabilitation package.",
       },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/pricing" },
+      { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/pricing" }],
   }),
   component: Pricing,
 });

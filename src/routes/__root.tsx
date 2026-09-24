@@ -81,7 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Spine, joint and physiotherapy care by Dr. Mukesh Kumar Sharma in Chander Nagar, Ghaziabad.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
+      { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#0284c7" },
+      { name: "geo.region", content: "IN-UP" },
+      { name: "geo.placename", content: "Ghaziabad" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -121,7 +126,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
-        <main className="flex-1 pb-24 sm:pb-0">
+        <main id="main-content" tabIndex={-1} className="flex-1 pb-24 sm:pb-0">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>

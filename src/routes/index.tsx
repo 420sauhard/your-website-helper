@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { CloudShader } from "@/components/ui/cloud-shader";
 import { clinic, pricing, treatments, waLink } from "@/lib/clinic";
+import physioImg from "@/assets/physiotherapy.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,7 +36,13 @@ export const Route = createFileRoute("/")({
         content:
           "15 years of spine and joint rehabilitation: manual therapy, chiropractic adjustments, IFT/TENS/SWD and online consultation.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Home,
 });
@@ -169,6 +176,16 @@ function Home() {
             </div>
           ))}
         </div>
+        <figure className="mt-10 overflow-hidden rounded-3xl border border-border shadow-sm">
+          <img
+            src={physioImg}
+            alt="Physiotherapist treating a patient's lower back at Anita Devi Spine & Joints Centre"
+            width={1200}
+            height={800}
+            loading="lazy"
+            className="h-64 w-full object-cover sm:h-96"
+          />
+        </figure>
       </section>
 
       {/* Treatments */}

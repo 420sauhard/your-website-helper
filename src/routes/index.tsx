@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { CloudShader } from "@/components/ui/cloud-shader";
 import { clinic, pricing, treatments, waLink } from "@/lib/clinic";
-import physioImg from "@/assets/physiotherapy.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -176,16 +175,6 @@ function Home() {
             </div>
           ))}
         </div>
-        <figure className="mt-10 overflow-hidden rounded-3xl border border-border shadow-sm">
-          <img
-            src={physioImg}
-            alt="Physiotherapist treating a patient's lower back at Anita Devi Spine & Joints Centre"
-            width={1200}
-            height={800}
-            loading="lazy"
-            className="h-64 w-full object-cover sm:h-96"
-          />
-        </figure>
       </section>
 
       {/* Treatments */}

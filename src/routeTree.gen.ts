@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
 
@@ -30,6 +31,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/pricing': typeof PricingRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/pricing': typeof PricingRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -60,21 +68,31 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/pricing': typeof PricingRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/pricing' | '/treatments'
+  fullPaths:
+    '/' | '/about' | '/contact' | '/gallery' | '/pricing' | '/treatments'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/pricing' | '/treatments'
-  id: '__root__' | '/' | '/about' | '/contact' | '/pricing' | '/treatments'
+  to: '/' | '/about' | '/contact' | '/gallery' | '/pricing' | '/treatments'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/pricing'
+    | '/treatments'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
   PricingRoute: typeof PricingRoute
   TreatmentsRoute: typeof TreatmentsRoute
 }
@@ -102,6 +120,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -123,6 +148,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
   PricingRoute: PricingRoute,
   TreatmentsRoute: TreatmentsRoute,
 }

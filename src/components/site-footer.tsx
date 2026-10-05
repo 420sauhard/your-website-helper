@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone, Youtube } from "lucide-react";
 import { clinic } from "@/lib/clinic";
 
 export function SiteFooter() {
@@ -9,8 +9,8 @@ export function SiteFooter() {
         <div>
           <h3 className="font-display text-lg font-bold">{clinic.name}</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            {clinic.doctor} — {clinic.experience}. Spine, joint and physiotherapy care in
-            Chander Nagar, Ghaziabad.
+            {clinic.doctor} — {clinic.experience}. Spine, joint and physiotherapy care in Chander
+            Nagar, Ghaziabad.
           </p>
           <p className="mt-3 text-xs font-semibold tracking-wide text-accent">
             {clinic.qualifications.join(" · ")}
@@ -24,7 +24,11 @@ export function SiteFooter() {
             {clinic.address}
           </p>
           {clinic.phones.map((p) => (
-            <a key={p} href={`tel:+91${p}`} className="flex items-center gap-2 font-medium hover:text-primary">
+            <a
+              key={p}
+              href={`tel:+91${p}`}
+              className="flex items-center gap-2 font-medium hover:text-primary"
+            >
               <Phone className="h-4 w-4 text-primary" /> {p}
             </a>
           ))}
@@ -48,10 +52,21 @@ export function SiteFooter() {
             <Link to="/pricing" className="hover:text-primary">
               Fees
             </Link>
+            <Link to="/gallery" className="hover:text-primary">
+              Gallery
+            </Link>
             <Link to="/contact" className="hover:text-primary">
               Book appointment
             </Link>
           </div>
+          <a
+            href={clinic.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-medium hover:text-primary"
+          >
+            <Youtube className="h-5 w-5 text-[#ff0000]" aria-hidden="true" /> Dr. Sharma on YouTube
+          </a>
         </div>
       </div>
       <div className="container-page border-t border-border py-6 text-xs text-muted-foreground">

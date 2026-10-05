@@ -3,8 +3,9 @@ export const clinic = {
   doctor: "Dr. Mukesh Kumar Sharma",
   experience: "15 Years in Practice",
   qualifications: ["DPT", "DAC", "BEMS", "BNYS", "PGDMM"],
-  phones: ["9711302246", "9910960410"],
+  phones: ["9910960410", "9711302246"],
   whatsapp: "9711302246",
+  youtube: "https://www.youtube.com/@doctormksharma",
   address: "B-7, Block B, Chander Nagar, Surya Nagar, Ghaziabad, UP 201011",
   timings: [
     { days: "Monday – Saturday", hours: "9:30 AM – 1:00 PM  |  4:30 PM – 8:00 PM" },
@@ -37,34 +38,91 @@ export const treatments = [
   {
     slug: "electrotherapy",
     title: "Electrotherapy & Technology",
-    conditions:
-      "Pain modulation, nerve stimulation, deep tissue inflammatory resolution.",
+    conditions: "Pain modulation, nerve stimulation, deep tissue inflammatory resolution.",
     modalities: ["IFT", "TENS", "Ultrasound (US)", "Shortwave (SWD)", "Traction"],
   },
   {
     slug: "tele-health",
     title: "Tele-Health & Remote Care",
-    conditions:
-      "Post-op follow-up, digital ergonomic guidance, customized home exercise plans.",
+    conditions: "Post-op follow-up, digital ergonomic guidance, customized home exercise plans.",
     modalities: ["Dedicated Online Video Consultation"],
   },
 ];
 
+export interface FeeItem {
+  name: string;
+  price: string;
+  unit: string;
+  note?: string;
+}
+
+export interface FeeCategory {
+  id: string;
+  title: string;
+  description: string;
+  items: FeeItem[];
+}
+
+export const feeCategories: FeeCategory[] = [
+  {
+    id: "consultation-core",
+    title: "Consultation & Core Therapies",
+    description: "Doctor consultation and the main hands-on and needle-based therapies.",
+    items: [
+      {
+        name: "Advance Consultation",
+        price: "₹600",
+        unit: "per visit",
+        note: "Booked at least 1 day prior",
+      },
+      { name: "Same-Day Consultation", price: "₹800", unit: "per visit" },
+      { name: "Physiotherapy", price: "₹500", unit: "per session" },
+      {
+        name: "Acupuncture",
+        price: "₹300",
+        unit: "per session",
+        note: "+ additional needle cost",
+      },
+    ],
+  },
+  {
+    id: "naturopathy",
+    title: "Naturopathy Treatments",
+    description: "Traditional natural therapies for pain relief, stiffness and recovery.",
+    items: [
+      { name: "Kati Basti", price: "₹300", unit: "per session" },
+      { name: "Janu Basti", price: "₹300", unit: "per session" },
+      { name: "Potli Massage", price: "₹200", unit: "per session" },
+      { name: "Partial Massage", price: "₹200", unit: "per session" },
+      { name: "Hizama (Cupping)", price: "₹300", unit: "per session" },
+      { name: "Naturopath Lep", price: "₹200", unit: "per session" },
+      { name: "Local Steam", price: "₹200", unit: "per session" },
+    ],
+  },
+];
+
+export const feeTerms = [
+  "10% discount on a 10-day package",
+  "Package stays valid for an additional 15 days",
+  "All payments must be made in advance",
+];
+
+// Highlights shown on the home page; full list lives on the Fees page.
 export const pricing = [
   {
-    label: "Initial Consultation",
+    label: "Advance Consultation",
     price: "₹600",
-    detail: "Comprehensive diagnosis, range testing & clinical review.",
+    detail: "Book at least 1 day prior. Same-day consultation is ₹800.",
   },
   {
-    label: "Per-Session Therapy",
-    price: "₹600",
-    detail: "Targeted electrotherapy or manual therapy session in clinic.",
+    label: "Physiotherapy",
+    price: "₹500",
+    detail: "Per session — electrotherapy and manual therapy in clinic.",
   },
   {
-    label: "10-Day Treatment Plan",
-    price: "₹5,000",
-    detail: "Complete 10-session curated rehabilitation regimen.",
+    label: "10-Day Package",
+    price: "10% off",
+    detail: "Save on a full 10-day course. Valid for an additional 15 days.",
     featured: true,
   },
 ];

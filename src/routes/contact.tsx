@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Book a clinic visit or online physiotherapy consultation in Chander Nagar, Ghaziabad. Call 9711302246 / 9910960410 or send your details on WhatsApp.",
+          "Book a clinic visit or online physiotherapy consultation in Chander Nagar, Ghaziabad. Call 9910960410 / 9711302246 or send your details on WhatsApp.",
       },
       { property: "og:title", content: "Book an Appointment — Ghaziabad Spine & Joints Clinic" },
       {

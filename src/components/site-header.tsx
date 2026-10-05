@@ -8,6 +8,7 @@ const nav = [
   { to: "/about", label: "Dr. Sharma" },
   { to: "/treatments", label: "Treatments" },
   { to: "/pricing", label: "Fees" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Book / Contact" },
 ] as const;
 
@@ -34,9 +35,7 @@ export function SiteHeader() {
         return;
       }
       if (e.key === "Tab" && menuRef.current) {
-        const items = Array.from(
-          menuRef.current.querySelectorAll<HTMLElement>("a, button"),
-        );
+        const items = Array.from(menuRef.current.querySelectorAll<HTMLElement>("a, button"));
         const all = buttonRef.current ? [buttonRef.current, ...items] : items;
         const firstEl = all[0];
         const lastEl = all[all.length - 1];
@@ -89,7 +88,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={`tel:+91${clinic.phones[0]}`} className="btn-base btn-primary hidden sm:inline-flex">
+          <a
+            href={`tel:+91${clinic.phones[0]}`}
+            className="btn-base btn-primary hidden sm:inline-flex"
+          >
             <Phone className="h-4 w-4" aria-hidden="true" />
             {clinic.phones[0]}
           </a>
@@ -102,7 +104,11 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
             className="btn-base btn-outline h-11 w-11 justify-center p-0 lg:hidden"
           >
-            {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+            {open ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
@@ -128,7 +134,10 @@ export function SiteHeader() {
                     activeOptions={{ exact: item.to === "/" }}
                     onClick={() => setOpen(false)}
                     className="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-muted-foreground hover:bg-secondary hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring"
-                    activeProps={{ className: "bg-secondary text-foreground", "aria-current": "page" }}
+                    activeProps={{
+                      className: "bg-secondary text-foreground",
+                      "aria-current": "page",
+                    }}
                   >
                     {item.label}
                   </Link>

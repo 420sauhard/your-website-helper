@@ -10,16 +10,18 @@ import {
   Star,
   Stethoscope,
   Video,
+  Youtube,
 } from "lucide-react";
 import { CloudShader } from "@/components/ui/cloud-shader";
+import { VideoCard } from "@/components/video-card";
 import { clinic, pricing, treatments, waLink } from "@/lib/clinic";
+import { testimonialVideos } from "@/lib/media";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Anita Devi Spine & Joints Centre — Spine, Joint & Physiotherapy Care in Ghaziabad",
+        title: "Anita Devi Spine & Joints Centre — Spine, Joint & Physiotherapy Care in Ghaziabad",
       },
       {
         name: "description",
@@ -102,7 +104,10 @@ const conditions = [
 function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
       {/* Hero */}
       <section className="relative">
@@ -240,10 +245,55 @@ function Home() {
             </div>
           ))}
         </div>
-        <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-          <ShieldCheck className="h-4 w-4 text-accent" /> Fees confirmed by the clinic. Payment at
-          reception after your session.
-        </p>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <p className="flex items-center gap-2 text-sm text-muted-foreground">
+            <ShieldCheck className="h-4 w-4 shrink-0 text-accent" /> Fees confirmed by the clinic.
+            All payments are made in advance.
+          </p>
+          <Link to="/pricing" className="btn-base btn-outline">
+            See all treatment charges
+          </Link>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section aria-labelledby="testimonials-heading" className="py-16">
+        <div className="container-page">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow text-accent">Client testimonials</p>
+              <h2 id="testimonials-heading" className="mt-2 text-2xl font-bold sm:text-3xl">
+                Hear it from our patients
+              </h2>
+              <p className="mt-2 max-w-2xl text-muted-foreground">
+                Real patients of {clinic.name} talk about their treatment and recovery.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/gallery" className="btn-base btn-outline">
+                View gallery
+              </Link>
+              <a
+                href={clinic.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-base bg-[#ff0000] text-white hover:bg-[#d90000]"
+              >
+                <Youtube className="h-4 w-4" aria-hidden="true" /> YouTube channel
+              </a>
+            </div>
+          </div>
+          <ul className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+            {testimonialVideos.map((v) => (
+              <li key={v.src} className="w-[72%] shrink-0 snap-start sm:w-auto">
+                <VideoCard video={v} />
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
+            Swipe to see more →
+          </p>
+        </div>
       </section>
 
       {/* Location */}
@@ -251,9 +301,7 @@ function Home() {
         <div className="container-page grid gap-8 lg:grid-cols-2">
           <div>
             <p className="eyebrow text-accent">Find us</p>
-            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
-              Walk-in clinic in Chander Nagar
-            </h2>
+            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Walk-in clinic in Chander Nagar</h2>
             <p className="mt-4 text-muted-foreground">{clinic.address}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a

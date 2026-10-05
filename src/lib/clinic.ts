@@ -17,6 +17,19 @@ export const clinic = {
     "https://www.google.com/maps/dir/?api=1&destination=B-7%20Block%20B%2C%20Chander%20Nagar%2C%20Surya%20Nagar%2C%20Ghaziabad%2C%20UP%20201011",
 };
 
+// Live site origin, no trailing slash. Used for canonical links, share
+// previews and the sitemap (public/sitemap.xml must use the same origin).
+export const siteUrl = "https://YOUR-DOMAIN.com";
+
+export const absoluteUrl = (path: string): string => `${siteUrl}${path}`;
+
+export const shareImage = {
+  url: absoluteUrl("/media/og-image.jpg"),
+  width: "1200",
+  height: "630",
+  alt: "Anita Devi Spine & Joints Centre physiotherapy hall in Ghaziabad",
+};
+
 export const waLink = (message: string) =>
   `https://wa.me/91${clinic.whatsapp}?text=${encodeURIComponent(message)}`;
 

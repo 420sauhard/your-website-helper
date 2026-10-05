@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Clock, MapPin, MessageCircle, Phone, Send } from "lucide-react";
-import { clinic, treatments, waLink } from "@/lib/clinic";
+import { absoluteUrl, clinic, treatments, waLink } from "@/lib/clinic";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,12 +19,12 @@ export const Route = createFileRoute("/contact")({
           "Click to call, WhatsApp the clinic desk, get directions to B-7 Chander Nagar, or request an online consultation.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: absoluteUrl("/contact") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/contact") }],
   }),
   component: Contact,
 });

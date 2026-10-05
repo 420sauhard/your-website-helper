@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Activity, MessageCircle, Video } from "lucide-react";
-import { clinic, treatments, waLink } from "@/lib/clinic";
+import { absoluteUrl, clinic, treatments, waLink } from "@/lib/clinic";
 
 export const Route = createFileRoute("/treatments")({
   head: () => ({
@@ -18,12 +18,12 @@ export const Route = createFileRoute("/treatments")({
           "Four care tracks: spine & joint rehabilitation, advanced manual therapy, electrotherapy technology and tele-health follow-up.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/treatments" },
+      { property: "og:url", content: absoluteUrl("/treatments") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/treatments" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/treatments") }],
   }),
   component: Treatments,
 });

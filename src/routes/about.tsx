@@ -10,7 +10,7 @@ import {
   Sparkles,
   Youtube,
 } from "lucide-react";
-import { clinic } from "@/lib/clinic";
+import { absoluteUrl, clinic } from "@/lib/clinic";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -28,12 +28,12 @@ export const Route = createFileRoute("/about")({
           "Credentials, clinical approach and OPD timings of the lead clinician at Anita Devi Spine & Joints Centre, Ghaziabad.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: absoluteUrl("/about") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/about") }],
   }),
   component: About,
 });

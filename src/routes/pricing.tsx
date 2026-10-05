@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Stethoscope,
 } from "lucide-react";
-import { feeCategories, feeTerms, waLink, type FeeCategory } from "@/lib/clinic";
+import { absoluteUrl, feeCategories, feeTerms, waLink, type FeeCategory } from "@/lib/clinic";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Fees at Anita Devi Spine & Joints Centre, Ghaziabad: ₹600 advance consultation, ₹800 same-day, physiotherapy ₹500 per session, acupuncture and naturopathy from ₹200. 10% off 10-day packages.",
+          "Clinic fees in Ghaziabad: ₹600 consultation (₹800 same-day), physiotherapy ₹500/session, acupuncture & naturopathy from ₹200. 10% off 10-day packages.",
       },
       { property: "og:title", content: "Fees — Anita Devi Spine & Joints Centre" },
       {
@@ -26,12 +26,12 @@ export const Route = createFileRoute("/pricing")({
           "₹600 consultation, ₹500 physiotherapy session, naturopathy from ₹200 and 10% off a 10-day package.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/pricing" },
+      { property: "og:url", content: absoluteUrl("/pricing") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/pricing" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/pricing") }],
   }),
   component: Pricing,
 });

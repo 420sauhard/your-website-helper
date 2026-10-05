@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactDock } from "@/components/contact-dock";
+import { shareImage } from "@/lib/clinic";
 
 function NotFoundComponent() {
   return (
@@ -84,6 +85,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: shareImage.url },
+      { property: "og:image:width", content: shareImage.width },
+      { property: "og:image:height", content: shareImage.height },
+      { property: "og:image:alt", content: shareImage.alt },
+      { name: "twitter:image", content: shareImage.url },
       { name: "theme-color", content: "#0284c7" },
       { name: "geo.region", content: "IN-UP" },
       { name: "geo.placename", content: "Ghaziabad" },

@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { CloudShader } from "@/components/ui/cloud-shader";
 import { VideoCard } from "@/components/video-card";
-import { clinic, pricing, treatments, waLink } from "@/lib/clinic";
+import { absoluteUrl, clinic, pricing, shareImage, treatments, waLink } from "@/lib/clinic";
 import { testimonialVideos } from "@/lib/media";
 
 export const Route = createFileRoute("/")({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Slip disc, sciatica, cervical spondylosis, knee arthritis and frozen shoulder treatment by Dr. Mukesh Kumar Sharma (15 years) in Chander Nagar, Ghaziabad. Consultation ₹600.",
+          "Slip disc, sciatica, spondylosis, knee arthritis & frozen shoulder treatment by Dr. Mukesh Kumar Sharma in Chander Nagar, Ghaziabad. Consultation ₹600.",
       },
       {
         property: "og:title",
@@ -38,12 +38,12 @@ export const Route = createFileRoute("/")({
           "15 years of spine and joint rehabilitation: manual therapy, chiropractic adjustments, IFT/TENS/SWD and online consultation.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: absoluteUrl("/") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/") }],
   }),
   component: Home,
 });
@@ -54,6 +54,9 @@ const schema = {
   name: clinic.name,
   description:
     "Spine and joint rehabilitation, physiotherapy, chiropractic and electrotherapy clinic in Chander Nagar, Ghaziabad.",
+  url: absoluteUrl("/"),
+  image: shareImage.url,
+  sameAs: [clinic.youtube],
   telephone: clinic.phones.map((p) => `+91${p}`),
   address: {
     "@type": "PostalAddress",

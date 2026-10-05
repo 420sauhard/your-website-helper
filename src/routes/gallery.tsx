@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Youtube } from "lucide-react";
 import { VideoCard } from "@/components/video-card";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { clinic } from "@/lib/clinic";
+import { absoluteUrl, clinic } from "@/lib/clinic";
 import { photos, videos, type GalleryVideo } from "@/lib/media";
 
 export const Route = createFileRoute("/gallery")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/gallery")({
       {
         name: "description",
         content:
-          "See inside Anita Devi Spine & Joints Centre, Ghaziabad: therapy halls, traction and electrotherapy, patient testimonials and health tips from Dr. Mukesh Kumar Sharma.",
+          "See inside Anita Devi Spine & Joints Centre, Ghaziabad: therapy halls, traction, electrotherapy, patient testimonials and health tips from Dr. Sharma.",
       },
       { property: "og:title", content: "Gallery — Anita Devi Spine & Joints Centre" },
       {
@@ -21,12 +21,12 @@ export const Route = createFileRoute("/gallery")({
         content: "Clinic photos, patient testimonial videos and health tips from Dr. Sharma.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/gallery" },
+      { property: "og:url", content: absoluteUrl("/gallery") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/gallery") }],
   }),
   component: Gallery,
 });

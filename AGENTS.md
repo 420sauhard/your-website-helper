@@ -1,10 +1,11 @@
-<!-- LOVABLE:BEGIN -->
 > [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
+> Do not rewrite published git history — no force pushing, and no rebasing,
+> amending or squashing commits that are already pushed.
 >
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+> Pushes to `main` deploy to production on Cloudflare Workers, so keep `main`
+> in a working state: run `npx tsc --noEmit` and `npm run build` before pushing.
+
+- Stack: TanStack Start (React) + Tailwind, built with Vite and Nitro for
+  Cloudflare Workers (`vite.config.ts`). Package manager: npm.
+- Clinic details, fees and the live site address live in `src/lib/clinic.ts`;
+  gallery photos and videos are listed in `src/lib/media.ts`.

@@ -1,24 +1,39 @@
-# Your Website Helper
+# Anita Devi Spine & Joints Centre — Website
 
-help me bulid a website using
+Website for Anita Devi Spine & Joints Centre, Chander Nagar, Ghaziabad
+(Dr. Mukesh Kumar Sharma): treatments, fees, gallery, patient testimonials
+and appointment booking via WhatsApp.
 
-This project was built with [Lovable](https://lovable.dev).
+Built with TanStack Start (React), Tailwind CSS and Vite, and hosted on
+Cloudflare Workers.
 
-## Build with Lovable
+## Run locally
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/b65ddee8-e1f5-4369-bb78-e2345b528031).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js 22+ and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install
+npm run dev        # http://localhost:8080
 ```
+
+## Build and deploy
+
+```sh
+npm run build      # production build into .output/
+npm run deploy     # build and publish to Cloudflare (needs `npx wrangler login` once)
+```
+
+Pushes to `main` deploy automatically once the repository is connected in
+Cloudflare (Workers & Pages → Create → Import a repository), using:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+
+## Where things live
+
+| What | File |
+|---|---|
+| Clinic name, phones, timings, fees, site address | `src/lib/clinic.ts` |
+| Gallery photos and videos | `src/lib/media.ts`, files in `public/media/` |
+| Pages | `src/routes/` |
+| Sitemap and robots | `public/sitemap.xml`, `public/robots.txt` |

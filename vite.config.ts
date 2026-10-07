@@ -37,7 +37,8 @@ export default defineConfig(({ command }) => ({
     ...(command === "build"
       ? [
           nitro({
-            preset: "cloudflare-module",
+            // NITRO_PRESET=node-server builds a plain Node server for local/shared previews.
+            preset: process.env["NITRO_PRESET"] || "cloudflare-module",
             cloudflare: {
               nodeCompat: true,
               deployConfig: true,

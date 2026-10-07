@@ -27,7 +27,7 @@ export const Route = createFileRoute("/about")({
         content:
           "Credentials, clinical approach and OPD timings of the lead clinician at Anita Devi Spine & Joints Centre, Ghaziabad.",
       },
-      { property: "og:type", content: "article" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: absoluteUrl("/about") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Clock, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { absoluteUrl, clinic, treatments, waLink } from "@/lib/clinic";
+import { normalizeMobile } from "@/lib/phone";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -10,7 +11,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Book a clinic visit or online physiotherapy consultation in Chander Nagar, Ghaziabad. Call 9910960410 / 9711302246 or send your details on WhatsApp.",
+          `Book a clinic visit or online physiotherapy consultation in Chander Nagar, Ghaziabad. Call ${clinic.phones.join(" / ")} or send your details on WhatsApp.`,
       },
       { property: "og:title", content: "Book an Appointment — Ghaziabad Spine & Joints Clinic" },
       {
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/contact")({
         content:
           "Click to call, WhatsApp the clinic desk, get directions to B-7 Chander Nagar, or request an online consultation.",
       },
-      { property: "og:type", content: "article" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: absoluteUrl("/contact") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },
@@ -38,10 +39,12 @@ function Contact() {
     message: "",
   });
 
+  const mobile = normalizeMobile(form.phone);
+
   const summary = [
     `New appointment request — ${clinic.name}`,
     `Name: ${form.name || "-"}`,
-    `Phone: ${form.phone || "-"}`,
+    `Phone: ${mobile ?? (form.phone || "-")}`,
     `Mode: ${form.mode}`,
     `Concern: ${form.concern}`,
     form.message ? `Details: ${form.message}` : "",
@@ -49,7 +52,7 @@ function Contact() {
     .filter(Boolean)
     .join("\n");
 
-  const disabled = form.name.trim().length < 2 || form.phone.trim().length < 10;
+  const disabled = form.name.trim().length < 2 || mobile === null;
 
   return (
     <div className="container-page py-16">

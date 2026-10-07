@@ -25,7 +25,7 @@ export const Route = createFileRoute("/pricing")({
         content:
           "₹600 consultation, ₹500 physiotherapy session, naturopathy from ₹200 and 10% off a 10-day package.",
       },
-      { property: "og:type", content: "article" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: absoluteUrl("/pricing") },
       { property: "og:site_name", content: "Anita Devi Spine & Joints Centre" },
       { property: "og:locale", content: "en_IN" },

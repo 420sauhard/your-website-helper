@@ -125,7 +125,13 @@ function PhotoGrid() {
       </ul>
 
       <Dialog open={current !== null} onOpenChange={(o) => !o && setOpenIndex(null)}>
-        <DialogContent className="max-w-4xl gap-3 p-3 sm:p-4">
+        <DialogContent
+          className="max-w-4xl gap-3 p-3 sm:p-4"
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") step(-1);
+            if (e.key === "ArrowRight") step(1);
+          }}
+        >
           {current && (
             <>
               <img

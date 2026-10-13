@@ -65,10 +65,10 @@ const pillars = [
 ];
 
 const approach = [
-  "Detailed assessment and range-of-motion testing before any therapy begins.",
-  "Hands-on manual and chiropractic correction rather than painkiller dependence.",
-  "Electrotherapy chosen per condition: IFT, TENS, ultrasound, shortwave, traction.",
-  "Home exercise and posture plan so results hold after discharge.",
+  { title: "Electro Homeopathy", text: "Gentle plant-based remedies with no side effects." },
+  { title: "Acupuncture Therapy", text: "Fine needles to relieve pain and restore energy flow." },
+  { title: "Naturopathy", text: "Natural healing through diet, mud, steam and massage." },
+  { title: "Physiotherapy", text: "Exercise, manual therapy and electrotherapy for mobility." },
 ];
 
 function About() {
@@ -187,9 +187,12 @@ function About() {
       <h2 className="mt-16 text-2xl font-bold">Clinical approach</h2>
       <ul className="mt-6 grid gap-3 md:grid-cols-2">
         {approach.map((a) => (
-          <li key={a} className="surface-card flex gap-3 p-5 text-sm">
+          <li key={a.title} className="surface-card flex gap-3 p-5 text-sm">
             <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
-            <span>{a}</span>
+            <span>
+              <span className="block font-semibold text-foreground">{a.title}</span>
+              <span className="text-muted-foreground">{a.text}</span>
+            </span>
           </li>
         ))}
       </ul>

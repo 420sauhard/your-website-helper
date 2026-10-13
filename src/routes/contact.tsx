@@ -10,14 +10,13 @@ export const Route = createFileRoute("/contact")({
       { title: "Book an Appointment — Anita Devi Spine & Joints Centre, Ghaziabad" },
       {
         name: "description",
-        content:
-          `Book a clinic visit or online physiotherapy consultation in Chander Nagar, Ghaziabad. Call ${clinic.phones.join(" / ")} or send your details on WhatsApp.`,
+        content: `Book a centre visit or online physiotherapy consultation in Chander Nagar, Ghaziabad. Call ${clinic.phones.join(" / ")} or send your details on WhatsApp.`,
       },
-      { property: "og:title", content: "Book an Appointment — Ghaziabad Spine & Joints Clinic" },
+      { property: "og:title", content: "Book an Appointment — Ghaziabad Spine & Joints Centre" },
       {
         property: "og:description",
         content:
-          "Click to call, WhatsApp the clinic desk, get directions to B-7 Chander Nagar, or request an online consultation.",
+          "Click to call, WhatsApp the centre desk, get directions to B-7 Chander Nagar, or request an online consultation.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: absoluteUrl("/contact") },
@@ -34,7 +33,7 @@ function Contact() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    mode: "Clinic visit",
+    mode: "Centre visit",
     concern: treatments[0]?.title ?? "Spine & Joint Rehabilitation",
     message: "",
   });
@@ -59,7 +58,7 @@ function Contact() {
       <p className="eyebrow text-accent">Appointments &amp; tele-health</p>
       <h1 className="mt-2 text-3xl font-extrabold sm:text-4xl">Book your visit</h1>
       <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-        Fill the form and send it straight to the clinic desk on WhatsApp, or simply call us during
+        Fill the form and send it straight to the centre desk on WhatsApp, or simply call us during
         OPD hours.
       </p>
 
@@ -102,7 +101,7 @@ function Contact() {
               onChange={(e) => setForm({ ...form, mode: e.target.value })}
               className="mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm font-normal outline-none focus:border-ring focus:ring-2 focus:ring-ring/30"
             >
-              <option>Clinic visit</option>
+              <option>Centre visit</option>
               <option>Online video consultation</option>
             </select>
           </label>
@@ -132,11 +131,15 @@ function Contact() {
             />
           </label>
 
-          <button type="submit" disabled={disabled} className="btn-base btn-whatsapp w-full disabled:opacity-50">
+          <button
+            type="submit"
+            disabled={disabled}
+            className="btn-base btn-whatsapp w-full disabled:opacity-50"
+          >
             <Send className="h-4 w-4" /> Send request on WhatsApp
           </button>
           <p className="text-xs text-muted-foreground">
-            Your details open in WhatsApp so the clinic desk can confirm the slot with you directly.
+            Your details open in WhatsApp so the centre desk can confirm the slot with you directly.
           </p>
         </form>
 
@@ -161,7 +164,7 @@ function Contact() {
           </div>
 
           <div className="surface-card p-7">
-            <h2 className="font-display text-lg font-bold">Clinic &amp; timings</h2>
+            <h2 className="font-display text-lg font-bold">Centre &amp; timings</h2>
             <p className="mt-4 flex gap-2 text-sm text-muted-foreground">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> {clinic.address}
             </p>
@@ -188,7 +191,7 @@ function Contact() {
 
       <div className="mt-10 overflow-hidden rounded-3xl border border-border shadow-card">
         <iframe
-          title="Clinic location on Google Maps"
+          title="Centre location on Google Maps"
           src={clinic.mapsEmbed}
           className="h-96 w-full"
           loading="lazy"

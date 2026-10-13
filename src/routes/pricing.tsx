@@ -17,7 +17,7 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Clinic fees in Ghaziabad: ₹600 consultation (₹800 same-day), physiotherapy ₹500/session, acupuncture & naturopathy from ₹200. 10% off 10-day packages.",
+          "Centre fees in Ghaziabad: ₹600 consultation (₹800 same-day), physiotherapy ₹500/session, acupuncture & naturopathy from ₹200. 10% off 10-day packages.",
       },
       { property: "og:title", content: "Fees — Anita Devi Spine & Joints Centre" },
       {
@@ -56,7 +56,7 @@ function Pricing() {
         Treatment charges &amp; consultation fees
       </h1>
       <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-        Fees are fixed and confirmed by the clinic — you always know what a visit costs before you
+        Fees are fixed and confirmed by the centre — you always know what a visit costs before you
         arrive.
       </p>
 
@@ -104,7 +104,7 @@ function Pricing() {
         <div className="surface-card p-7">
           <h2 className="font-display text-xl font-bold">Questions about a package?</h2>
           <p className="mt-3 text-sm text-muted-foreground">
-            Message the clinic desk on WhatsApp and the team will confirm availability, timings and
+            Message the centre desk on WhatsApp and the team will confirm availability, timings and
             what to bring.
           </p>
           <a
@@ -113,7 +113,7 @@ function Pricing() {
             rel="noreferrer"
             className="btn-base btn-whatsapp mt-6"
           >
-            <MessageCircle className="h-4 w-4" /> Chat with the clinic
+            <MessageCircle className="h-4 w-4" /> Chat with the centre
           </a>
         </div>
       </div>

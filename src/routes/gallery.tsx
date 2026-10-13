@@ -18,7 +18,7 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:title", content: "Gallery — Anita Devi Spine & Joints Centre" },
       {
         property: "og:description",
-        content: "Clinic photos, patient testimonial videos and health tips from Dr. Sharma.",
+        content: "Centre photos, patient testimonial videos and health tips from Dr. Sharma.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: absoluteUrl("/gallery") },
@@ -50,7 +50,7 @@ function Gallery() {
   return (
     <div className="container-page py-16">
       <p className="eyebrow text-accent">Media gallery</p>
-      <h1 className="mt-2 text-3xl font-extrabold sm:text-4xl">Inside our clinic</h1>
+      <h1 className="mt-2 text-3xl font-extrabold sm:text-4xl">Inside our centre</h1>
       <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
         Take a look at our therapy halls and equipment, hear from our patients, and watch health
         tips from Dr. Sharma.
@@ -79,7 +79,7 @@ function Gallery() {
       {showVideos && (
         <>
           <VideoSection id="testimonials" title="Patient testimonials" items={testimonials} />
-          <VideoSection id="tour-tips" title="Clinic tour & health tips" items={otherVideos} />
+          <VideoSection id="tour-tips" title="Centre tour & health tips" items={otherVideos} />
         </>
       )}
 
@@ -97,7 +97,7 @@ function PhotoGrid() {
   return (
     <section aria-labelledby="photos-heading" className="mt-12">
       <h2 id="photos-heading" className="text-2xl font-bold">
-        Clinic photos
+        Centre photos
       </h2>
       <ul className="mt-6 grid auto-rows-[160px] grid-cols-2 gap-3 sm:auto-rows-[200px] md:grid-cols-4">
         {photos.map((p, i) => (

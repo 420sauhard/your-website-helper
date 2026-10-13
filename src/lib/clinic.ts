@@ -130,7 +130,7 @@ export const pricing = [
   {
     label: "Physiotherapy",
     price: "₹500",
-    detail: "Per session — electrotherapy and manual therapy in clinic.",
+    detail: "Per session — electrotherapy and manual therapy at the centre.",
   },
   {
     label: "10-Day Package",

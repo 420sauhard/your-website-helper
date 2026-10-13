@@ -53,7 +53,7 @@ const schema = {
   "@type": ["MedicalClinic", "LocalBusiness"],
   name: clinic.name,
   description:
-    "Spine and joint rehabilitation, physiotherapy, chiropractic and electrotherapy clinic in Chander Nagar, Ghaziabad.",
+    "Spine and joint rehabilitation, physiotherapy, chiropractic and electrotherapy centre in Chander Nagar, Ghaziabad.",
   url: absoluteUrl("/"),
   image: shareImage.url,
   sameAs: [clinic.youtube],
@@ -134,9 +134,10 @@ function Home() {
                 Move without pain again — spine &amp; joint care in Ghaziabad
               </h1>
               <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-                {clinic.doctor} ({clinic.qualifications.join(", ")}) treats slip disc, sciatica,
-                spondylosis and arthritis with hands-on therapy, chiropractic adjustment and
-                advanced electrotherapy.
+                {clinic.name} in Chander Nagar, Ghaziabad brings physiotherapy, acupuncture,
+                naturopathy and electrotherapy under one roof. Led by {clinic.doctor}, we treat slip
+                disc, sciatica, spondylosis and arthritis naturally — without dependence on
+                painkillers.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link to="/contact" className="btn-base btn-primary">
@@ -191,7 +192,7 @@ function Home() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="eyebrow text-accent">Treatment modalities</p>
-              <h2 className="mt-2 text-2xl font-bold sm:text-3xl">What happens in the clinic</h2>
+              <h2 className="mt-2 text-2xl font-bold sm:text-3xl">What happens in the centre</h2>
             </div>
             <Link to="/treatments" className="btn-base btn-outline">
               See all treatments
@@ -250,7 +251,7 @@ function Home() {
         </div>
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
-            <ShieldCheck className="h-4 w-4 shrink-0 text-accent" /> Fees confirmed by the clinic.
+            <ShieldCheck className="h-4 w-4 shrink-0 text-accent" /> Fees confirmed by the centre.
             All payments are made in advance.
           </p>
           <Link to="/pricing" className="btn-base btn-outline">
@@ -304,7 +305,7 @@ function Home() {
         <div className="container-page grid gap-8 lg:grid-cols-2">
           <div>
             <p className="eyebrow text-accent">Find us</p>
-            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Walk-in clinic in Chander Nagar</h2>
+            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Walk-in centre in Chander Nagar</h2>
             <p className="mt-4 text-muted-foreground">{clinic.address}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -322,7 +323,7 @@ function Home() {
           </div>
           <div className="overflow-hidden rounded-3xl border border-border shadow-card">
             <iframe
-              title="Clinic location on Google Maps"
+              title="Centre location on Google Maps"
               src={clinic.mapsEmbed}
               className="h-80 w-full"
               loading="lazy"

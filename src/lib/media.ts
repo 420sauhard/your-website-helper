@@ -77,8 +77,8 @@ export const photos: GalleryPhoto[] = [
   ),
   photo(
     "clinic-entrance-view",
-    "Inside the clinic",
-    "View into the clinic from the entrance showing the waiting and therapy areas",
+    "Inside the centre",
+    "View into the centre from the entrance showing the waiting and therapy areas",
   ),
 ];
 
@@ -93,7 +93,7 @@ export const videos: GalleryVideo[] = [
     "testimonial-2",
     "testimonial",
     "Relief after therapy",
-    "A patient describes her treatment, including electrotherapy at the clinic.",
+    "A patient describes her treatment, including electrotherapy at the centre.",
   ),
   video(
     "testimonial-3",
@@ -104,13 +104,13 @@ export const videos: GalleryVideo[] = [
   video(
     "testimonial-4",
     "testimonial",
-    "Clinic visit & patient story",
-    "A walk through the clinic followed by patients sharing their experience.",
+    "Centre visit & patient story",
+    "A walk through the centre followed by patients sharing their experience.",
   ),
   video(
     "clinic-tour",
     "tour",
-    "Tour of the clinic",
+    "Tour of the centre",
     "See the entrance, dispensary, traction and therapy areas.",
   ),
   video(

@@ -8,7 +8,7 @@ export function ContactDock() {
         <a
           href={`tel:+91${clinic.phones[0]}`}
           className="btn-base btn-primary flex-1 sm:flex-none"
-          aria-label="Call the clinic"
+          aria-label="Call the centre"
         >
           <Phone className="h-4 w-4" /> Call now
         </a>
@@ -19,7 +19,7 @@ export function ContactDock() {
           target="_blank"
           rel="noreferrer"
           className="btn-base btn-whatsapp flex-1 sm:flex-none"
-          aria-label="Message the clinic on WhatsApp"
+          aria-label="Message the centre on WhatsApp"
         >
           <MessageCircle className="h-4 w-4" /> WhatsApp
         </a>
